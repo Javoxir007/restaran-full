@@ -15,4 +15,20 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', [PageController::class, 'index']);
+Route::get('about', [PageController::class, 'about']);
+Route::get('blog', [PageController::class, 'blog']);
+Route::get('blogFull', [PageController::class, 'blogFull']);
+Route::get('contact', [PageController::class, 'contact']);
+Route::get('reservation', [PageController::class, 'reservation']);
+Route::get('menu', [PageController::class, 'menu']);
+Route::get('shopDetailes', [PageController::class, 'shopDetailes']);
+Route::get('cart', [PageController::class, 'cart']);
+Route::get('teamChefs', [PageController::class, 'teamChefs']);
+Route::get('checkout', [PageController::class, 'checkout']);
+Route::get('notPage', [PageController::class, 'notPage']);
+Route::get('faqs', [PageController::class, 'faqs']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

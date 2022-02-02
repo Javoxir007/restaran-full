@@ -12,6 +12,17 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public const ROLES = ['admin','direktor'];
+
+    public function getRole()
+    {
+        $role = $this->role;
+        if(!$role || in_array(strtolower($role), self::ROLES)){
+            return $role;
+        }
+        return false;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +32,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**

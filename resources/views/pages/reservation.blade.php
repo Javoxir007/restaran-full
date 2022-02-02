@@ -30,34 +30,29 @@
                         </div>
                     </div>
                     <div class="col-lg-6 sm-padding">
+                        @include('includes/error_messages')
                         <div class="booking-form">
                             <h3>Book a Table <span></span></h3>
-                            <form action="https://html.dynamiclayers.net/te/caferio/booking-form.php" method="post" id="ajax_booking_form" class="form-horizontal">
+                            <form action="{{ route('admin/reservation/store') }}" method="POST" class="form-horizontal">
+                            @csrf @method('POST')
                                 <div class="booking-form-group">
                                     <div class="form-padding">
-                                        <input type="text" id="b_name" name="b_name" class="form-control" placeholder="Your Name" required>
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                                     </div>
                                     <div class="form-padding">
-                                        <input type="email" id="b_email" name="b_email" class="form-control" placeholder="Email" required>
+                                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                                     </div>
                                     <div class="form-padding">
-                                        <select class="form-select" id="b_person" name="b_person">
-                                          <option selected>Person</option>
-                                          <option>2 Person</option>
-                                          <option>3 Person</option>
-                                          <option>4 Person</option>
-                                          <option>5 Person</option>
-                                        </select>
+                                        <input type="text" name="person" class="form-control" placeholder="Person" required>
                                     </div>
                                     <div class="form-padding">
-                                        <input class="form-control" type="date" id="b_date" name="b_date">
+                                        <input class="form-control" type="date" name="date">
                                     </div>
                                     <div class="form-padding">
-                                        <textarea id="b_message" name="b_message" cols="30" rows="6" class="form-control message" placeholder="Message" required></textarea>
+                                        <textarea name="message" cols="30" rows="6" class="form-control message" placeholder="Message"></textarea>
                                     </div>
                                 </div>
-                                <button id="b_submit" class="book-btn" type="submit">Book a Table</button>
-                                <div id="b-form-messages" class="alert" role="alert"></div>
+                                <button class="book-btn" type="submit">Book a Table</button>
                             </form>
                         </div>
                     </div>

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6 sm-padding">
                     <div class="footer-widget">
-                        <a class="logo" href="index-2.html#"><img src="assets/img/logo-dark.png" alt="img"></a>
+                        <a class="logo" href="/"><img src="{{ asset('assets/img/logo-dark.png') }}" alt="img"></a>
                         <p>Financial experts support or help you to to find out which way you can raise your funds more.</p>
                         <ul class="footer-social">
                             <li><a href="index-2.html#"><i class="fab fa-facebook"></i></a></li>

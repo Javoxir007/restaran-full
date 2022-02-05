@@ -3,28 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Pages\IndexPageController;
+use App\Http\Controllers\Pages\AboutPageController;
+use App\Http\Controllers\Pages\BlogPageController;
+use App\Http\Controllers\Pages\MenuPageController;
+use App\Http\Controllers\Pages\ShopPageController;
+use App\Http\Controllers\Pages\BlogFullPageController;
+
+
 
 class PageController extends Controller
 {
     
     public function index()
     {
-        return view('pages/index');
+        return IndexPageController::indexContent();
     }
 
     public function about()
     {
-        return view('pages/about');
+        return AboutPageController::aboutContent(); 
     }
 
-    public function blog()
+    public function blog(Request $request)
     {
-        return view('pages/blog-grid');
+        return BlogPageController::blogContent($request);
     }
 
-    public function blogFull()
+    public function blogFull($id)
     {
-        return view('pages/blog-details');
+        return BlogFullPageController::blogFullContent($id);
     }
 
     public function contact()
@@ -39,12 +47,12 @@ class PageController extends Controller
 
     public function menu()
     {
-        return view('pages/food-menu');
+        return MenuPageController::menuContent();
     }
 
-    public function shopDetailes()
+    public function shopDetailes($id)
     {
-        return view('pages/shop-details');
+        return ShopPageController::shopContent($id);
     }
 
     public function cart()

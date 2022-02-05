@@ -25,18 +25,18 @@
                             <div class="col-lg-12 sm-padding">
                                 <div class="post-card">
                                     <div class="post-thumb">
-                                        <img src="assets/img/post-1.jpg" alt="img">
-                                        <div class="category"><a href="blog-details.html#">Salad</a></div>
+                                        <img src="{{ $item->image }}" alt="img">
+                                        <div class="category"><a href="#">{{ $item->category->name }}</a></div>
                                     </div>
                                     <div class="post-content">
                                         <ul class="post-meta">
-                                           <li><i class="far fa-calendar-alt"></i><a href="blog-details.html#">Jan 01 2022</a></li>
-                                           <li><i class="far fa-user"></i><a href="blog-details.html#">Jonathan Smith</a></li>
-                                           <li><i class="far fa-comments"></i><a href="blog-details.html#">5 Comments</a></li>
+                                           <li><i class="far fa-calendar-alt"></i><a href="#">{{ $item->date }}</a></li>
+                                           <li><i class="far fa-user"></i><a href="#">{{ $item->author->name }}</a></li>
+                                           <li><i class="far fa-comments"></i><a href="#">5 Comments</a></li>
                                         </ul>
-                                        <h3><a href="blog-details.html#">Beet and Burrata Salad with Fried.</a></h3>
-                                        <p>Financial experts support or help you to to find out which way you can raise your funds more. Arkit a trusted name for providing assistants. Initially their main objective was to ensure the service they provide these people are loyal to their industry, experienced and professional.</p>
-                                        <p>Unless you are the one who really cares about this, it is not terribly important. What all matters are how your hybrid mobile application development is going to work in the long run as no one will care about how it was built.</p>
+                                        <h3><a href="#">{{ $item->food_name }}</a></h3>
+                                        <p>{{ $item->short_description }}</p>
+                                        <p>{{ $item->full_description }}</p>
                                         <ul class="single-post-list">
                                             <h4>Method of cooking:</h4>
                                             <li><i class="fas fa-check"></i>The new functions coming to construction for equipment mathematics.</li>
@@ -46,8 +46,8 @@
                                             <li><i class="fas fa-check"></i>There are some big shifts taking place in the field of construction.</li>
                                         </ul>
                                         <ul class="single-post-gallery">
-                                            <li><img src="assets/img/post-1.jpg" alt="img"></li>
-                                            <li><img src="assets/img/post-2.jpg" alt="img"></li>
+                                            <li><img src="{{ $item->image }}" alt="img"></li>
+                                            <li><img src="{{ $item->image }}" alt="img"></li>
                                         </ul>
                                         <p>There are some big shifts taking place in the field of construction equipment mathematics. Starting with the integration of mathematics devices in vehicles right from the manufacturers, to the standardization and integration of mathematics data across various business functions, the future of mathematics has never seemed so full of potential for fleet-based businesses.</p>
                                         <blockquote>
@@ -55,14 +55,14 @@
                                         </blockquote>
                                         <p>Another speaker, John Meuse, senior director of heavy equipment at Waste Management Inc., echoed this, citing a cost-saving of $17,000 for the company when it cut idling time of a single Caterpillar 966 wheel loader.</p>
                                         <ul class="tags">
-                                            <li><a href="blog-details.html#">business</a></li>
-                                            <li><a href="blog-details.html#">marketing</a></li>
-                                            <li><a href="blog-details.html#">startup</a></li>
-                                            <li><a href="blog-details.html#">design</a></li>
-                                            <li><a href="blog-details.html#">consulting</a></li>
+                                            <li><a href="#">business</a></li>
+                                            <li><a href="#">marketing</a></li>
+                                            <li><a href="#">startup</a></li>
+                                            <li><a href="#">design</a></li>
+                                            <li><a href="#">consulting</a></li>
                                         </ul>
                                         <div class="author-box">
-                                            <img src="assets/img/comment-1.png" alt="img">
+                                            <img src="{{ $item->image }}" alt="img">
                                             <div class="author-info">
                                                 <h4>S M Mostain Billah</h4>
                                                 <p>Wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</p>
@@ -87,7 +87,7 @@
                                     <li class="comment even thread-even depth-1" id="comment-1">
                                         <div id="div-comment-1">
                                             <div class="comment-thumb">
-                                                <div class="comment-img"><img src="assets/img/comment-1.png" alt=""></div>
+                                                <div class="comment-img"><img src="{{ asset('assets/img/comment-1.png') }}" alt=""></div>
                                             </div>
                                             <div class="comment-main-area">
                                                 <div class="comment-wrapper">
@@ -107,7 +107,7 @@
                                             <li class="comment">
                                                 <div>
                                                     <div class="comment-thumb">
-                                                        <div class="comment-img"><img src="assets/img/comment-2.png" alt=""></div>
+                                                        <div class="comment-img"><img src="{{ asset('assets/img/comment-2.png') }}" alt=""></div>
                                                     </div>
                                                     <div class="comment-main-area">
                                                         <div class="comment-wrapper">
@@ -130,7 +130,7 @@
                                     <li class="comment">
                                         <div>
                                             <div class="comment-thumb">
-                                                <div class="comment-img"><img src="assets/img/comment-4.png" alt=""></div>
+                                                <div class="comment-img"><img src="{{ asset('assets/img/comment-4.png') }}" alt=""></div>
                                             </div>
                                             <div class="comment-main-area">
                                                 <div class="comment-wrapper">
@@ -170,14 +170,8 @@
                     <div class="col-lg-4 col-md-12 sm-padding">
                         <div class="sidebar-wrap">
                             <div class="sidebar-widget">
-                                <form action="blog-details.html" class="search-form">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <button class="search-btn" type="button"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div><!--/.search-form-->
-                            <div class="sidebar-widget">
                                 <div class="about-widget">
-                                    <img src="assets/img/blog-single-author.png" alt="img">
+                                    <img src="{{ asset('assets/img/blog-single-author.png') }}" alt="img">
                                     <p>Small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                                     <h3>Kyle Frederick</h3>
                                 </div>
@@ -188,11 +182,11 @@
                                    <span></span>
                                 </div>
                                 <ul class="categories">
-                                    <li><a href="blog-details.html#">Burger Strips<span>23</span></a></li>
-                                    <li><a href="blog-details.html#">Catalonian Salad <span>15</span></a></li>
-                                    <li><a href="blog-details.html#">Nicoise Salad <span>05</span></a></li>
-                                    <li><a href="blog-details.html#">Fried Chicjken <span>18</span></a></li>
-                                    <li><a href="blog-details.html#">Spacial Cawmin <span>04</span></a></li>
+                                    @forelse($blogCount as $item)
+                                        <li><a href="#">{{ $item->name }}<span>{{ $item->blog_count }}</span></a></li>
+                                    @empty
+                                        <li>Categoriya yo`q</li>
+                                    @endforelse
                                 </ul>
                             </div><!--/. categories-->
                             <div class="sidebar-widget">
@@ -215,33 +209,19 @@
                                    <span></span>
                                 </div>
                                 <ul class="recent-post">
-                                    <li>
-                                        <div class="thumb">
-                                            <img src="assets/img/post-thumb-1.jpg" alt="thumb">
-                                        </div>
-                                        <div class="recent-post-meta">
-                                            <h3><a href="blog-details.html#">How to go about initiating an startup in few days.</a></h3>
-                                            <a href="blog-details.html#" class="date"><i class="far fa-calendar-alt"></i>Jan 01 2022</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <img src="assets/img/post-thumb-2.jpg" alt="thumb">
-                                        </div>
-                                        <div class="recent-post-meta">
-                                            <h3><a href="blog-details.html#">Financial experts support or help you to to find way.</a></h3>
-                                            <a href="blog-details.html#" class="date"><i class="far fa-calendar-alt"></i>Jan 01 2022</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="thumb">
-                                            <img src="assets/img/post-thumb-3.jpg" alt="thumb">
-                                        </div>
-                                        <div class="recent-post-meta">
-                                            <h3><a href="blog-details.html#">Innovative helping your business all over the world.</a></h3>
-                                            <a href="blog-details.html#" class="date"><i class="far fa-calendar-alt"></i>Jan 01 2022</a>
-                                        </div>
-                                    </li>
+                                    @forelse($last_blogs as $item)
+                                        <li>
+                                            <div class="thumb">
+                                                <img src="{{ $item->image }}" alt="thumb">
+                                            </div>
+                                            <div class="recent-post-meta">
+                                                <h3><a href="#">{{ $item->food_name }}</a></h3>
+                                                <a href="#" class="date"><i class="far fa-calendar-alt"></i>{{ $item->date }}</a>
+                                            </div>
+                                        </li>
+                                    @empty
+                                        <li>Blog yo`q</li>
+                                    @endforelse
                                 </ul>
                             </div><!--/.recent-posts -->
                             <div class="sidebar-widget">

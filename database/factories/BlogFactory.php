@@ -20,7 +20,7 @@ class BlogFactory extends Factory
             'date' => $this->faker->date(),
             'author_id' => rand(1,3),
             'food_name' => $this->faker->sentence(3, false),
-            'short_description' => $this->faker->sentence(20, false),
+            'short_description' => $this->faker->sentence(15, false),
             'full_description' => $this->faker->sentence(100, false)
         ];
     }

@@ -64,4 +64,5 @@ class AuthorController extends Controller
         return redirect()->route('admin/author/index')->with(['success' => 'O`chirildi']);
     }
 
+    
 }

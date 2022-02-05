@@ -26,7 +26,7 @@
                         <li><i class="fas fa-check"></i>Fast Delivery</li>
                     </ul>
                     <p>Food is any substance consumed to provide nutritional <br>support for an organism.</p>
-                    <a href="shop.html" class="default-btn"><i class="fas fa-shopping-cart"></i>Order Now <span></span></a>
+                    <a href="#" class="default-btn"><i class="fas fa-shopping-cart"></i>Order Now <span></span></a>
                 </div>
             </div>
         </section><!--/.hero-section-->
@@ -48,7 +48,7 @@
                             <h2 class="mb-20">Caferio, Burgers, And <br>Best Pizzas <span>in Town!</span></h2>
                             <p>The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.</p>
                             <p>Food is any substance consumed to provide nutritional support for an organism. Everyone just loves italian foods, because its delicious.</p>
-                            <a href="/shopDetailes" class="default-btn">Order Now <span></span></a>
+                            <a href="#" class="default-btn">Order Now <span></span></a>
                         </div>
                     </div>
                 </div>
@@ -71,98 +71,33 @@
                 <div class="nav-outside">
                   <div class="food-carousel swiper-container nav-visible">
                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="product-item">
-                                   <div class="sale">-15%</div>
-                                    <div class="product-thumb">
-                                        <img src="assets/img/food01.png" alt="food">
-                                        <div><a href="/shopDetailes" class="order-btn">Order Now</a></div>
-                                    </div>
-                                    <div class="food-info">
-                                       <ul class="ratting">
-                                           <li>Chicken</li>
-                                           <li><i class="las la-star"></i></li>
+                            @forelse($product as $item)
+                                <div class="swiper-slide">
+                                    <div class="product-item">
+                                    <div class="sale">-{{ $item->discount }}%</div>
+                                        <div class="product-thumb">
+                                            <img src="{{ $item->image }}" alt="food">
+                                            <div><a href="{{ route('shopDetailes', $item->id) }}" class="order-btn">Order Now</a></div>
+                                        </div>
+                                        <div class="food-info">
+                                        <ul class="ratting">
+                                            <li>{{ $item->category->name }}</li>
                                             <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                       </ul>
-                                        <h3>Fried Chicken Unlimited</h3>
-                                        <div class="price">
-                                            <h4>Price: <span>$49.00</span> <span class="reguler">$69.00</span></h4>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                                <li><i class="las la-star"></i></li>
+                                        </ul>
+                                            <h3>{{ $item->name }}</h3>
+                                            <div class="price">
+                                                <h4>Price: <span>${{ $item->price }}</span> <span class="reguler">${{ $item->old_price }}</span></h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-item">
-                                    <div class="sale">-10%</div>
-                                    <div class="product-thumb">
-                                        <img src="assets/img/food02.png" alt="food">
-                                        <div><a href="shop-details.html" class="order-btn">Order Now</a></div>
-                                    </div>
-                                    <div class="food-info">
-                                       <ul class="ratting">
-                                           <li>Noddles</li>
-                                           <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                       </ul>
-                                        <h3>Burger King Whopper</h3>
-                                        <div class="price">
-                                            <h4>Price: <span>$29.00</span> <span class="reguler">$39.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-item">
-                                    <div class="sale">-25%</div>
-                                    <div class="product-thumb">
-                                        <img src="assets/img/food03.png" alt="food">
-                                        <div><a href="shop-details.html" class="order-btn">Order Now</a></div>
-                                    </div>
-                                    <div class="food-info">
-                                       <ul class="ratting">
-                                           <li>Pizzas</li>
-                                           <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                       </ul>
-                                        <h3>White Castle Pizzas</h3>
-                                        <div class="price">
-                                            <h4>Price: <span>$49.00</span> <span class="reguler">$69.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="product-item">
-                                    <div class="sale">-20%</div>
-                                    <div class="product-thumb">
-                                        <img src="assets/img/food04.png" alt="food">
-                                        <div><a href="shop-details.html" class="order-btn">Order Now</a></div>
-                                    </div>
-                                    <div class="food-info">
-                                       <ul class="ratting">
-                                           <li>Burrito</li>
-                                           <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                            <li><i class="las la-star"></i></li>
-                                       </ul>
-                                        <h3>Bell Burrito Supreme</h3>
-                                        <div class="price">
-                                            <h4>Price: <span>$59.00</span> <span class="reguler">$69.00</span></h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                                <div class="col-12">Saylanganlar yo`q</div>
+                            @endforelse
                         </div>
                         <div class="dl-slider-controls style-2">
                             <div class="dl-slider-button-prev"><i class="las la-arrow-left"></i></div>
@@ -208,86 +143,31 @@
                     <p>Food is any substance consumed to provide nutritional <br> support for an organism.</p>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="200ms">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-01.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="index-2.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Charles Richard</h3>
-                                    <h4>Executive Chef</h4>
+                    @forelse($chefs as $item)
+                        <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="200ms">
+                            <div class="team-item">
+                                <div class="team-thumb">
+                                    <img src="{{ $item->image }}" alt="team">
+                                    <ul class="team-social">
+                                        <li><a href="index-2.html#"><i class="lab la-facebook-f"></i></a></li>
+                                        <li><a href="index-2.html#"><i class="lab la-twitter"></i></a></li>
+                                        <li><a href="index-2.html#"><i class="lab la-instagram"></i></a></li>
+                                        <li><a href="index-2.html#"><i class="lab la-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="team-content">
+                                    <div class="team-shape"></div>
+                                    <div class="inner">
+                                        <h3>{{ $item->name }}</h3>
+                                        <h4>{{ $item->job }}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="400ms">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-02.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="index-2.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Robert William</h3>
-                                    <h4>Head Chef</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="600ms">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-03.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="index-2.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Thomas Josef</h3>
-                                    <h4>Junior Chef</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding wow fadeInUp" data-wow-delay="800ms">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-04.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="index-2.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="index-2.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Mike Albatson</h3>
-                                    <h4>Kitchen Porter</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <div class="col-12">Oshpazlar xozircha yo`q</div>
+                    @endforelse
+                    
                 </div>
             </div>
         </section><!--/.team-section-->
@@ -434,57 +314,27 @@
                     <p>Food is any substance consumed to provide nutritional <br> support for an organism.</p>
                 </div>
                 <div class="row blog-posts">
-                    <div class="col-lg-4 col-md-6 sm-padding wow fadeInUp" data-wow-delay="200ms">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-1.jpg" alt="img">
-                                <div class="category"><a href="index-2.html#">Pizza</a></div>
-                            </div>
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="index-2.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="index-2.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="blog-details.html">What Do You Think About Cheese Pizza Recipes?</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="blog-details.html" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 sm-padding wow fadeInUp" data-wow-delay="400ms">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-2.jpg" alt="img">
-                                <div class="category"><a href="index-2.html#">Burger</a></div>
-                            </div>
-                            <div class="post-content">
-                               <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="index-2.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="index-2.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="blog-details.html">Making Chicken Strips With New Delicious Ingridents.</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="blog-details.html" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
+                    @forelse($blogs as $item)
+                        <div class="col-lg-4 col-md-6 sm-padding wow fadeInUp" data-wow-delay="200ms">
+                            <div class="post-card">
+                                <div class="post-thumb">
+                                    <img src="{{ $item->image }}" alt="img">
+                                    <div class="category"><a href="#">{{ $item->category->name }}</a></div>
+                                </div>
+                                <div class="post-content">
+                                    <ul class="post-meta">
+                                    <li><i class="far fa-calendar-alt"></i><a href="#">{{ $item->date }}</a></li>
+                                    <li><i class="far fa-user"></i><a href="#">{{ $item->author->name }}</a></li>
+                                    </ul>
+                                    <h3><a href="#">{{ $item->food_name }}</a></h3>
+                                    <p>{{ $item->short_description }}...</p>
+                                    <a href="{{ route('blogFull', $item->id) }}" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 sm-padding wow fadeInUp" data-wow-delay="600ms">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-3.jpg" alt="img">
-                                <div class="category"><a href="index-2.html#">Chicken</a></div>
-                            </div>
-                            <div class="post-content">
-                               <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="index-2.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="index-2.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="blog-details.html">Innovative Hot Chessyraw Pasta Make Creator Fact.</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="blog-details.html" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <div class="col-12">Bloglar yo`q</div>
+                    @endforelse
                 </div>
             </div>
         </section><!-- /.blog-section -->

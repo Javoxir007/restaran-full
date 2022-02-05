@@ -11,26 +11,26 @@
 
         <title>Caferio | @yield('title')</title>
 
-		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
 
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-        <link rel="stylesheet" href="assets/css/line-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/food-icon.css">
-        <link rel="stylesheet" href="assets/css/slider.css">
-        <link rel="stylesheet" href="assets/css/venobox.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <link rel="stylesheet" href="assets/css/swiper.min.css">
-        <link rel="stylesheet" href="assets/css/splitting-cells.css">
-        <link rel="stylesheet" href="assets/css/splitting.css">
-        <link rel="stylesheet" href="assets/css/keyframe-animation.css">
-        <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/blog.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
+        <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/food-icon.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/slider.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/venobox.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/slick.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/splitting-cells.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/splitting.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/keyframe-animation.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/blog.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="{{ asset('assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
     </head>
 
     <body class="header-1">
@@ -52,20 +52,20 @@
         </div>
 
 		<!-- jQuery Lib -->
-		<script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
-		<script src="assets/js/vendor/bootstrap.min.js"></script>
-		<script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
-		<script src="assets/js/vendor/jquery.isotope.v3.0.2.js"></script>
-		<script src="assets/js/vendor/splitting.min.js"></script>
-		<script src="assets/js/vendor/slick.min.js"></script>
-		<script src="assets/js/vendor/swiper.min.js"></script>
-		<script src="assets/js/vendor/venobox.min.js"></script>
-		<script src="assets/js/vendor/simpleParallax.min.js"></script>
-		<script src="assets/js/vendor/smooth-scroll.js"></script>
-		<script src="assets/js/vendor/waypoints.min.js"></script>
-		<script src="assets/js/vendor/wow.min.js"></script>
-		<script src="assets/js/booking.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="{{ asset('assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/imagesloaded.pkgd.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/jquery.isotope.v3.0.2.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/splitting.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/slick.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/swiper.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/venobox.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/simpleParallax.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/smooth-scroll.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/waypoints.min.js') }}"></script>
+		<script src="{{ asset('assets/js/vendor/wow.min.js') }}"></script>
+		<script src="{{ asset('assets/js/booking.js') }}"></script>
+		<script src="{{ asset('assets/js/main.js') }}"></script>
 
     </body>
 </html>

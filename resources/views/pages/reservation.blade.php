@@ -26,7 +26,7 @@
                             <h4>Reservation</h4>
                             <h2>Enjoy Our Tasty Food <br>Reserve <span>Your Table</span></h2>
                             <p>The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.</p>
-                            <a href="reservation.html#" class="default-btn">Contact Us <span></span></a>
+                            <a href="/contact" class="default-btn">Contact Us <span></span></a>
                         </div>
                     </div>
                     <div class="col-lg-6 sm-padding">

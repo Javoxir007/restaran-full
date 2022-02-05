@@ -22,8 +22,8 @@
                 <div class="row">
                     <div class="col-md-6 sm-padding product-details-wrap">
                         <div class="food-details-thumb">
-                            <img src="assets/img/food-details.jpg" alt="food">
-                            <a class="img-popup" data-gall="gallery01" href="assets/img/food-details.jpg"><i class="fas fa-expand"></i></a>
+                            <img src="{{ $item->image }}" alt="food" width="100%">
+                            <a class="img-popup" data-gall="gallery01" href="{{ $item->image }}"><i class="fas fa-expand"></i></a>
                         </div>
                     </div>
                     <div class="col-md-6 sm-padding">
@@ -31,7 +31,7 @@
                             <div class="product-info">
                                 <div class="product-inner">
                                     <ul class="category">
-                                       <li><a href="shop-details.html#">Chicken</a></li>
+                                       <li><a href="shop-details.html#">{{ $item->category->name }}</a></li>
                                     </ul>
                                     <ul class="ratting">
                                         <li><i class="las la-star"></i></li>
@@ -41,9 +41,9 @@
                                         <li><i class="las la-star"></i></li>
                                     </ul>
                                 </div>
-                                <h3>Kung Pao Chicken BBQ</h3>
-                                <h4 class="price">$59.00 <span>(In Stock)</span></h4>
-                                <p>Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern look.</p>
+                                <h3>{{ $item->name }}</h3>
+                                <h4 class="price">${{ $item->price }} <span>{{ $stock }}</span></h4>
+                                <p>{{ $item->description }}</p>
                                 
                                 <div class="product-btn">
                                     <form>
@@ -54,7 +54,7 @@
                                 </div>
                                 <ul class="product-meta">
                                     <li>SKU:<a href="shop-details.html#">ANQ4O6DWDZ</a></li>
-                                    <li>Categories:<a href="shop-details.html#">Bag</a> <a href="shop-details.html#">Womens</a></li>
+                                    <li>Categories:<a href="shop-details.html#">{{ $item->category->name }}</a></li>
                                     <li>Tags:<a href="shop-details.html#">Dress</a> <a href="shop-details.html#">Pants</a></li>
                                 </ul>
                                 <ul class="social-icon">

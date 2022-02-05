@@ -21,4 +21,17 @@ class Blog extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function scopeFilter($query, $request)
+    {
+        $search = $request->name;
+
+        if(!empty($search)){
+            $query->where('food_name', 'like', "%$search%")
+                  ->orWhere('full_description', 'like', "%$search%")
+                  ->orWhere('short_description', 'like', "%$search%");
+        }
+    }
+    
+    
+    
 }

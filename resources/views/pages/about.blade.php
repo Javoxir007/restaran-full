@@ -33,7 +33,7 @@
                             <h2 class="mb-20">Caferio, Burgers, And <br>Best Pizzas <span>in Town!</span></h2>
                             <p>The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.</p>
                             <p>Food is any substance consumed to provide nutritional support for an organism. Everyone just loves italian foods, because its delicious.</p>
-                            <a href="about.html#" class="default-btn">Order Now <span></span></a>
+                            <a href="#" class="default-btn">Order Now <span></span></a>
                         </div>
                     </div>
                 </div>
@@ -70,86 +70,33 @@
                     <p>Food is any substance consumed to provide nutritional <br> support for an organism.</p>
                 </div>
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-01.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="about.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Charles Richard</h3>
-                                    <h4>Executive Chef</h4>
+                    @forelse($chefs as $item)
+                        <div class="col-lg-3 col-sm-6 sm-padding">
+                            <div class="team-item">
+                                <div class="team-thumb">
+                                    <img src="{{ $item->image }}" alt="team">
+                                    <ul class="team-social">
+                                        <li><a href="about.html#"><i class="lab la-facebook-f"></i></a></li>
+                                        <li><a href="about.html#"><i class="lab la-twitter"></i></a></li>
+                                        <li><a href="about.html#"><i class="lab la-instagram"></i></a></li>
+                                        <li><a href="about.html#"><i class="lab la-behance"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="team-content">
+                                    <div class="team-shape"></div>
+                                    <div class="inner">
+                                        <h3>{{ $item->name }}</h3>
+                                        <h4>{{ $item->job }}</h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-02.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="about.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Robert William</h3>
-                                    <h4>Head Chef</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-03.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="about.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Thomas Josef</h3>
-                                    <h4>Junior Chef</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="team-item">
-                            <div class="team-thumb">
-                                <img src="assets/img/team-04.jpg" alt="team">
-                                <ul class="team-social">
-                                    <li><a href="about.html#"><i class="lab la-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="lab la-behance"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-content">
-                                <div class="team-shape"></div>
-                                <div class="inner">
-                                    <h3>Mike Albatson</h3>
-                                    <h4>Kitchen Porter</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <div class="col-12">Oshpazlar hozircha yo`q</div>
+                    @endforelse
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    {{$chefs->links()}}
                 </div>
             </div>
         </section><!--/.team-section-->
@@ -243,7 +190,7 @@
                             <h2>A Moments Of Delivered <br> On <span>Right Time</span> &amp; Place</h2>
                             <p>The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.</p>
                             <div class="order-content">
-                               <a href="about.html#" class="default-btn">Order Now <span></span></a>
+                               <a href="#" class="default-btn">Order Now <span></span></a>
                                 <h3><span>Order Number</span>012-345-6789</h3>
                             </div>
                         </div>
@@ -268,7 +215,7 @@
                                 <h3>-50% Off Now!</h3>
                                 <h2>Discount For Delicious <br>Tasty Burgers!</h2>
                                 <p>Sale off 50% only this week</p>
-                                <a href="about.html#" class="order-btn">Order Now</a>
+                                <a href="#" class="order-btn">Order Now</a>
                             </div>
                         </div>
                    </div>
@@ -280,7 +227,7 @@
                                     <div class="banner-content">
                                         <h3>Delicious <br> Pizza</h3>
                                         <p>50% off Now</p>
-                                        <a href="about.html#" class="order-btn">Order Now</a>
+                                        <a href="#" class="order-btn">Order Now</a>
                                     </div>
                                 </div>
                            </div>
@@ -290,7 +237,7 @@
                                     <div class="banner-content">
                                         <h3>American <br>Burgers</h3>
                                         <p>50% off Now</p>
-                                        <a href="about.html#" class="order-btn">Order Now</a>
+                                        <a href="#" class="order-btn">Order Now</a>
                                     </div>
                                 </div>
                            </div>
@@ -300,7 +247,7 @@
                                     <div class="banner-content">
                                         <h3>Tasty Buzzed <br>Pizza</h3>
                                         <p>Sale off 50% only this week</p>
-                                        <a href="about.html#" class="order-btn">Order Now</a>
+                                        <a href="#" class="order-btn">Order Now</a>
                                     </div>
                                 </div>
                            </div>
@@ -319,57 +266,27 @@
                     <p>Food is any substance consumed to provide nutritional <br> support for an organism.</p>
                 </div>
                 <div class="row blog-posts">
-                    <div class="col-lg-4 col-md-6 sm-padding">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-1.jpg" alt="img">
-                                <div class="category"><a href="about.html#">Pizza</a></div>
-                            </div>
-                            <div class="post-content">
-                                <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="about.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="about.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="about.html#">What Do You Think About Cheese Pizza Recipes?</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="about.html#" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 sm-padding">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-2.jpg" alt="img">
-                                <div class="category"><a href="about.html#">Burger</a></div>
-                            </div>
-                            <div class="post-content">
-                               <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="about.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="about.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="about.html#">Making Chicken Strips With New Delicious Ingridents.</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="about.html#" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
+                    @forelse($blogs as $item)
+                        <div class="col-lg-4 col-md-6 sm-padding">
+                            <div class="post-card">
+                                <div class="post-thumb">
+                                    <img src="{{ $item->image }}" alt="img">
+                                    <div class="category"><a href="#">{{ $item->category->name }}</a></div>
+                                </div>
+                                <div class="post-content">
+                                    <ul class="post-meta">
+                                    <li><i class="far fa-calendar-alt"></i><a href="#">{{ $item->date }}</a></li>
+                                    <li><i class="far fa-user"></i><a href="#">{{ $item->author->name }}</a></li>
+                                    </ul>
+                                    <h3><a href="#">{{ $item->food_name }}</a></h3>
+                                    <p>{{ $item->short_description }}...</p>
+                                    <a href="{{ route('blogFull', $item->id) }}" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 sm-padding">
-                        <div class="post-card">
-                            <div class="post-thumb">
-                                <img src="assets/img/post-3.jpg" alt="img">
-                                <div class="category"><a href="about.html#">Chicken</a></div>
-                            </div>
-                            <div class="post-content">
-                               <ul class="post-meta">
-                                   <li><i class="far fa-calendar-alt"></i><a href="about.html#">Jan 01 2021</a></li>
-                                   <li><i class="far fa-user"></i><a href="about.html#">Jonathan Smith</a></li>
-                                </ul>
-                                <h3><a href="about.html#">Innovative Hot Chessyraw Pasta Make Creator Fact.</a></h3>
-                                <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                <a href="about.html#" class="read-more">Read More <i class="las la-long-arrow-alt-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @empty
+                        <div class="col-12">Blog yo`q</div>
+                    @endforelse
                 </div>
             </div>
         </section><!-- /.blog-section -->
